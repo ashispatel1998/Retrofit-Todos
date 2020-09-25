@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:text="get todos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="getTodos"
+            tools:ignore="OnClick" />
+        <Button
+            android:text="get todos using route parameter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="getTodosUsingRouteParameter"
+            tools:ignore="OnClick"
+            />
+        <Button
+            android:text="get todos using query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="getTodosUsingQuery"
+            tools:ignore="OnClick"
+            />
+        <Button
+            android:text="post todo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="postTodo"
+            tools:ignore="OnClick"
+            />
+    </LinearLayout>
+</RelativeLayout>
