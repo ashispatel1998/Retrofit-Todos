@@ -38,5 +38,17 @@
             android:onClick="postTodo"
             tools:ignore="OnClick"
             />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txt_msg"
+                android:text=""
+                android:textColor="#F44336"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
     </LinearLayout>
 </RelativeLayout>

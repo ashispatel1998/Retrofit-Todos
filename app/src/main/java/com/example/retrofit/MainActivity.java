@@ -2,9 +2,11 @@ package com.example.retrofit;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     ApiInterface apiInterface;
 
+    TextView txt_msg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         // step 4: Create Api Interface
         // step 5: Add Internet Permissions in mainfest.xml file
 
+        txt_msg=findViewById(R.id.txt_msg);
         apiInterface=ApiClient.getClient().create(ApiInterface.class);
 
     }
@@ -40,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Todo>> call, Response<List<Todo>> response) {
              Log.e(TAG,"onResponse :"+response.body());
+             txt_msg.setText(response.body().toString());
             }
 
             @Override
@@ -56,11 +62,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Todo> call, Response<Todo> response) {
                 Log.e(TAG,"onResponse :"+response.body());
+                txt_msg.setText(response.body().toString());
             }
 
             @Override
             public void onFailure(Call<Todo> call, Throwable t) {
                 Log.e(TAG,"onResponse :"+t.getLocalizedMessage());
+
             }
         });
     }
@@ -71,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onResponse(Call<List<Todo>> call, Response<List<Todo>> response) {
                Log.e(TAG,"onResponse :"+response.body());
+               txt_msg.setText(response.body().toString());
            }
 
            @Override
@@ -87,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
            @Override
            public void onResponse(Call<Todo> call, Response<Todo> response) {
                Log.e(TAG,"onResponse :"+response.body());
+               txt_msg.setText(response.body().toString());
            }
 
            @Override
